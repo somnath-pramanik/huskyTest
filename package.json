@@ -14,6 +14,16 @@
     "lint-css-fix": "stylelint \"src/**/*.scss\" --fix",
     "e2e": "ng e2e"
   },
+  "lint-staged": {
+    "src/**/*.{js,ts,scss,md,html,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && ng lint"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.4",
@@ -52,15 +62,5 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "~3.9.5"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && ng lint"
-    }
   }
 }
