@@ -16,12 +16,13 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write"
+      "prettier --write",
+      "npm run lint-fix"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && ng lint"
+      "pre-commit": "lint-staged"
     }
   },
   "private": true,
