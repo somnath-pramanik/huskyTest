@@ -16,7 +16,6 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write",
       "npm run lint-fix"
     ]
   },
