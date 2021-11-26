@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "npm run lint-js && npm run lint-css",
+    "lint-fix": "npm run lint-js-fix",
+    "lint-js": "ng lint",
+    "lint-js-fix": "ng lint --fix",
+    "lint-css": "stylelint \"src/**/*.scss\"",
+    "lint-css-fix": "stylelint \"src/**/*.scss\" --fix",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -39,22 +44,24 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "lint-staged": "^10.2.13",
-    "prettier": "^2.1.1",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
     "typescript": "~3.9.5"
   },
   "lint-staged": {
     "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
+
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "ng lint && lint-staged",
+      "pre-commit": "lint-staged && ng lint",
       "pre-push": "ng build --prod"
     }
   }

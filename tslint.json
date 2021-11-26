@@ -1,5 +1,7 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended",
+    "tslint-config-prettier"
+],
   "rules": {
     "align": {
       "options": [
@@ -133,6 +135,7 @@
         "check-typecast"
       ]
     },
+    "prettier": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -147,6 +150,7 @@
     "use-pipe-transform-interface": true
   },
   "rulesDirectory": [
-    "codelyzer"
+    "codelyzer",
+    "tslint-plugin-prettier"
   ]
 }
