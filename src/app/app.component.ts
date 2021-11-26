@@ -5,8 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'angular-with-pre-commit-hooks';
-  product = 'Glass';
-  products = 'Toy';
-}
+export class AppComponent {}
